@@ -6,9 +6,18 @@ import java.util.Random;
 import me.Cannonball.Cannonball;
 
 public class BoxController {
+	/*
+	 * Size and y variables
+	 */
 	private final int y = 0;
 	private int size = 1;
+	/**
+	 * Boxes ArrayList<Box> for the rows
+	 */
 	public static ArrayList<Box> boxes = new ArrayList<Box>();
+	/**
+	 * Add a new row to the Cannonpanel
+	 */
 	public void addNewRow() {
 		if(size != 1)
 			Box.moveRows();
@@ -27,6 +36,11 @@ public class BoxController {
 		}
 		size++;
 	}
+	/**
+	 * Convert to the x coordinate
+	 * @param place
+	 * @return
+	 */
 	private int xConvert(int place) {
 		if(place == 0) {
 			return 0;
@@ -35,6 +49,11 @@ public class BoxController {
 			return (Cannonball.Height / 6) * place;
 		}
 	}
+	/**
+	 * Remove a random boxes in the row
+	 * @param removeCount
+	 * @return
+	 */
 	private int[] selectedToRemove(int removeCount) {
 		int[] toRemove = new int[removeCount];
 		for (int i = 0; i < toRemove.length; i++) {
